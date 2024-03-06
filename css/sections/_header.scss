@@ -1,0 +1,153 @@
+.header {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 110%;
+  // color: #505050;
+  padding-top: 23px;
+  padding-bottom: 23px;
+
+  &__grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logotype {
+    width: 100%;
+    max-width: 100px;
+    display: flex;
+    text-decoration: none;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__description {
+    margin: 0;
+    margin-right: auto;
+    max-width: 260px;
+  }
+  &__phone {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 28px auto;
+    align-items: center;
+    margin-left: auto;
+    transition: color 0.3s;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 110%;
+    color: inherit;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .header__phone-text {
+        color: #a30000;
+      }
+    }
+  }
+  &__phone-icon {
+    width: 28px;
+    height: 28px;
+
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      background-color: #a30000;
+      z-index: 0;
+      border-radius: 5px;
+    }
+
+    svg {
+      flex-shrink: 0;
+      display: block;
+      width: 16px;
+      height: 15px;
+      z-index: 2;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+        left: -2px;
+        top: -2px;
+        bottom: -2px;
+        right: -2px;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    &__grid {
+      gap: 30px;
+      grid-template-columns: 65px 1fr auto;
+    }
+    &__logotype {
+      max-width: 65px;
+    }
+    &__phone {
+      font-size: 18px;
+      grid-template-columns: 25px auto;
+    }
+    &__phone-icon {
+      width: 25px;
+      height: 25px;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    &__grid {
+      gap: 10px;
+      grid-template-columns: 50px 1fr auto;
+    }
+    &__logotype {
+      max-width: 50px;
+    }
+    &__description {
+      font-size: 8px;
+      max-width: 95px;
+    }
+    &__phone {
+      font-size: 13px;
+      gap: 2px;
+      grid-template-columns: 15px auto;
+    }
+    &__phone-icon {
+      width: 15px;
+      height: 15px;
+
+      svg {
+        width: 9px;
+        height: 9px;
+      }
+    }
+  }
+}

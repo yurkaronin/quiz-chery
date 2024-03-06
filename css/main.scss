@@ -1,0 +1,31 @@
+// base
+@import
+"./base/normalize",
+"./base/fonts",
+"./base/root",
+"./base/global",
+"./base/support";
+
+// blocks
+@import
+"./blocks/wrapper",
+"./blocks/button",
+"./blocks/title";
+
+// sections
+@import
+"./sections/header",
+"./sections/main",
+"./sections/first-screen",
+"./sections/footer",
+"./sections/modal";
+
+// utils
+@import
+"./utils/overflow-hidden";
+// pages
+
+
+// activity
+@import
+"./activity/modal-open";
